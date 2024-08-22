@@ -1,0 +1,14 @@
+{
+    "name": "selenium-cicd",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "selenium-side-runner -c \"config=config.json\" googletest.side"
+    },
+    "dependencies": {
+      "selenium-side-runner": "^3.17.0",
+      "selenium-webdriver": "^4.10.0"
+    }
+  }
+  
