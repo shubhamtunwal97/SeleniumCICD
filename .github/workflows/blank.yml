@@ -80,4 +80,4 @@ jobs:
           sudo mv chromedriver /usr/local/bin/chromedriver
 
       - name: Run Selenium tests
-        run: npx selenium-side-runner -c "browserName=chrome chromeOptions.args=[headless,no-sandbox,disable-dev-shm-usage,disable-gpu] chromeOptions.binary=/usr/bin/google-chrome" googletest.side
+        run: npx selenium-side-runner -c "browserName=chrome" googletest.side
