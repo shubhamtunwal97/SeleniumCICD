@@ -21,8 +21,31 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm install
 
+      - name: Set up Selenium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          export DISPLAY=:99.0
+          Xvfb :99 -ac &
+        shell: bash
+
       - name: Run Selenium tests
         run: npx selenium-side-runner -c "config=config.json" googletest.side
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: path/to/test-results-directory
