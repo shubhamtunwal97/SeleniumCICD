@@ -44,7 +44,7 @@ jobs:
         shell: bash
 
       - name: Run Selenium tests
-        run: npx selenium-side-runner -c "config=config.json" googletest.side
+        run: npx selenium-side-runner -c "browserName=chrome chromeOptions.args=[headless]" googletest.side
 
       - name: Upload test results
         if: always()
