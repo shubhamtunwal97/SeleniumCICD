@@ -19,13 +19,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Use the Node.js version you need
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Selenium tests
-        run: npx selenium-side-runner -c "browserName=chrome chromeOptions.args=[headless]" --output-directory=./results googletest.side
+        run: npm test
 
       - name: Upload Test Results
         if: always()
