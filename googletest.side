@@ -1,0 +1,114 @@
+{
+  "id": "50cc0d76-cc04-4b36-9150-9aa431f69e36",
+  "version": "2.0",
+  "name": "test-idex",
+  "url": "https://www.geeksforgeeks.org",
+  "tests": [{
+    "id": "8b045c63-3044-4912-aee8-769f19bf4cd5",
+    "name": "googletest",
+    "commands": [{
+      "id": "6b7dcf69-3b77-47e3-922a-1e7e7afa1e0f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fba999ac-ca56-4f40-aba2-219ae6b225ee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1052x896",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2fd2cada-1204-4a80-939a-fe382ad382dd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.topBar",
+      "targets": [
+        ["css=.topBar", "css:finder"],
+        ["xpath=(//div[@id='comp']/div/div/div)[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e5acc81-7a48-4e01-838b-c1cb98719a4c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.HomePageSearchContainer_homePageSearchContainer_container_input__1LS0r",
+      "targets": [
+        ["css=.HomePageSearchContainer_homePageSearchContainer_container_input__1LS0r", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='comp']/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a27c9e48-7662-494e-916e-ae721d8b80d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.HomePageSearchContainer_homePageSearchContainer_container_input__1LS0r",
+      "targets": [
+        ["css=.HomePageSearchContainer_homePageSearchContainer_container_input__1LS0r", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='comp']/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b313087-895a-485c-9002-19bcbb28250a",
+      "comment": "",
+      "command": "type",
+      "target": "css=.HomePageSearchContainer_homePageSearchContainer_container_input__1LS0r",
+      "targets": [
+        ["css=.HomePageSearchContainer_homePageSearchContainer_container_input__1LS0r", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='comp']/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Python"
+    }, {
+      "id": "4c2dbe8e-f621-4868-a9a7-5dab02cc161f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.HomePageSearchContainer_homePageSearchContainer_container--results--singleResult__ij51M:nth-child(2)",
+      "targets": [
+        ["css=.HomePageSearchContainer_homePageSearchContainer_container--results--singleResult__ij51M:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='comp']/div[2]/div/div[2]/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3dd1de0-06a2-4fc8-bcb8-e30e7b9b0818",
+      "comment": "",
+      "command": "click",
+      "target": "css=.SearchModalArticleCard_searchModalArticleCard__x___y:nth-child(2) .SearchModalArticleCard_searchModalArticleCard_content_heading__hB4a_",
+      "targets": [
+        ["css=.SearchModalArticleCard_searchModalArticleCard__x___y:nth-child(2) .SearchModalArticleCard_searchModalArticleCard_content_heading__hB4a_", "css:finder"],
+        ["xpath=//div[@id='comp']/div[2]/div/div/div[2]/div/a[2]/div/div", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win5866",
+      "windowTimeout": 2000
+    }, {
+      "id": "f1ae804f-5863-400f-997f-2efd6bf93993",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win5866}",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f6f1b50c-e28a-4a0d-bc76-0628516db1e8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.geeksforgeeks.org/"],
+  "plugins": []
+}
