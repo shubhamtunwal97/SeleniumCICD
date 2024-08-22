@@ -25,11 +25,4 @@ jobs:
         run: npm install
 
       - name: Run Selenium tests
-        run: npm test
-
-      - name: Upload Test Results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: selenium-test-results
-          path: path/to/results
+        run: npx selenium-side-runner -c "config=config.json" googletest.side
