@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
       - name: Cache Node.js modules
         uses: actions/cache@v3
         with:
@@ -28,23 +29,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-          
-
       - name: Install dependencies
         run: npm install
 
-      - name: Set up Selenium
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y xvfb
-          export DISPLAY=:99.0
-          Xvfb :99 -ac &
-        shell: bash
-        
-      - name: Install jest-environment-selenium (if needed)
-        run: npm install jest-environment-selenium --save-dev --force
-      
-      - name: Install additional dependencies
+      - name: Install Google Chrome and dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -65,10 +53,8 @@ jobs:
             libu2f-udev \
             xdg-utils \
             wget \
-            unzip
-
-      - name: Install Google Chrome
-        run: |
+            unzip \
+            xvfb
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
@@ -78,6 +64,12 @@ jobs:
           wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
           sudo mv chromedriver /usr/local/bin/chromedriver
+
+      - name: Set up Xvfb
+        run: |
+          export DISPLAY=:99.0
+          Xvfb :99 -ac &
+        shell: bash
 
       - name: Run Selenium tests
         run: npx selenium-side-runner -c "browserName=chrome" googletest.side
