@@ -20,9 +20,30 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+          
 
       - name: Install dependencies
         run: npm install
+
+      - name: Set up Selenium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          export DISPLAY=:99.0
+          Xvfb :99 -ac &
+        shell: bash
+        
+      - name: Install jest-environment-selenium (if needed)
+        run: npm install jest-environment-selenium --save-dev --force
+      
 
       - name: Install Chrome dependencies
         run: |
